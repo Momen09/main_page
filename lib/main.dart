@@ -38,23 +38,24 @@ class _MyAppState extends State<MyApp> {
       home: SafeArea(
           child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+
           currentIndex: _selectedIndex, //New
           onTap: _onItemTapped,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          selectedFontSize: 20,
+          selectedFontSize: 0,
           unselectedItemColor:const Color(0xff4A7C87) ,
-          selectedIconTheme: const IconThemeData(color: Color(0xff004152), size: 40),
+          selectedIconTheme: const IconThemeData(color: Color(0xff004152),),
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home_filled,
+                Icons.home,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.credit_card,
+                Icons.account_balance_wallet ,
               ),
               label: '',
             ),
