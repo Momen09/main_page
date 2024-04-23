@@ -38,32 +38,32 @@ class _MyAppState extends State<MyApp> {
       home: SafeArea(
           child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
-
           currentIndex: _selectedIndex, //New
           onTap: _onItemTapped,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedFontSize: 0,
+          fixedColor: Color(0xff4A7C87),
+          // showSelectedLabels: true,
+          // showUnselectedLabels: true,
+          selectedFontSize: 15,
           unselectedItemColor:const Color(0xff4A7C87) ,
           selectedIconTheme: const IconThemeData(color: Color(0xff004152),),
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                Icons.person,
               ),
-              label: '',
+              label: 'بيانات الطالب',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_balance_wallet ,
               ),
-              label: '',
+              label: 'المحفظه',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,
+                Icons.home,
               ),
-              label: '',
+              label: 'الرئيسية',
             ),
           ],
         ),
