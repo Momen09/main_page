@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:unicons/unicons.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +23,6 @@ class _MyAppState extends State<MyApp> {
     Image.asset('assets/images/unii.png'),
     Image.asset('assets/images/unii.png'),
     Image.asset('assets/images/unii.png'),
-
   ];
 
   int currentIndex = 0;
@@ -35,37 +36,58 @@ class _MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
           child: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex, //New
-          onTap: _onItemTapped,
-          fixedColor: Color(0xff4A7C87),
-          // showSelectedLabels: true,
-          // showUnselectedLabels: true,
-          selectedFontSize: 15,
-          unselectedItemColor:const Color(0xff4A7C87) ,
-          selectedIconTheme: const IconThemeData(color: Color(0xff004152),),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
+        bottomNavigationBar: Container(
+          margin: const EdgeInsets.only(
+            left: 15,
+            right: 15,
+            bottom: 10,
+            top: 5,
+          ),
+          // decoration: BoxDecoration(boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.black.withOpacity(0.5),
+          //     blurRadius: 25,
+          //     offset: const Offset(8, 20),
+          //   ),
+          // ]),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: BottomNavigationBar(
+              currentIndex: _selectedIndex, //New
+              onTap: _onItemTapped,
+              fixedColor: const Color(0xff4A7C87),
+              // showSelectedLabels: true,
+              // showUnselectedLabels: true,
+              selectedFontSize: 15,
+              unselectedItemColor: const Color(0xff4A7C87),
+              selectedIconTheme: const IconThemeData(
+                color: Color(0xff004152),
               ),
-              label: 'بيانات الطالب',
+              items: const [
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/images/user.png'),
+                  ),
+                  label: 'بيانات الطالب',
+                ),
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/images/wallet-3.png'),
+                  ),
+                  label: 'المحفظه',
+                ),
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/images/home-2.png'),
+                  ),
+                  label: 'الرئيسية',
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_balance_wallet ,
-              ),
-              label: 'المحفظه',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: 'الرئيسية',
-            ),
-          ],
+          ),
         ),
         backgroundColor: const Color(0xffEBEEF3),
         body: SingleChildScrollView(
@@ -225,18 +247,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
