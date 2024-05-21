@@ -28,9 +28,9 @@ class _BarScreenState extends State<BarScreen> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
-          Profile2(),
+        HomePage(),
           WalletScreen(),
-          HomePage(),
+          Profile2(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -56,9 +56,9 @@ class _BarScreenState extends State<BarScreen> {
             items: const [
               BottomNavigationBarItem(
                 icon: ImageIcon(
-                  AssetImage('assets/images/user.png'),
+                  AssetImage('assets/images/home-2.png'),
                 ),
-                label: 'بيانات الطالب',
+                label: 'الرئيسية',
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
@@ -68,10 +68,11 @@ class _BarScreenState extends State<BarScreen> {
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
-                  AssetImage('assets/images/home-2.png'),
+                  AssetImage('assets/images/user.png'),
                 ),
-                label: 'الرئيسية',
+                label: 'بيانات الطالب',
               ),
+
             ],
           ),
         ),
